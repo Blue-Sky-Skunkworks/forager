@@ -2,7 +2,7 @@
 
 ## Database information
 The database dump file is the gleandb.sql file in the root directory. 
-To use this file run 
+To use this file run::
 '''
 psql --set ON_ERROR_STOP=on *databaseYouWantToRestoreTo* < gleandb.sql
 ''' 
