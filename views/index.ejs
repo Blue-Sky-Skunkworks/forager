@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title id='forageTitle'>Forage Missoula</title>
+  <title id='forageTitle'>Glean 406</title>
     <%- include ./navbar.ejs %>
     
     <meta charset="utf-8" />
@@ -16,168 +16,66 @@
     
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<body id="bg">
-
-<div id="bigIndex">
 <body>
-
-       <div id="treeContainer">
-
-          <div id="tree1">
-          </div>
-
-          <div id="tree2">
-          </div>
-
-          <div id="tree3">
-          </div>
-
-          <div id="tree4">
-          </div> 
-
-          <div id="tree5">
-          </div>
-
-          <div id="tree6">
-          </div>
-
-          <div id="tree7">
-          </div>
-
-          <div id="tree8">
-          </div>
-
-          <div id="tree9">
-          </div>
-
-          <div id="tree10">
-          </div>
-
-          <div id="M2">
-          </div>
-
-      </div>
-
-      <div id="line">
-      </div>
-
-    <script>
-        TweenMax.staggerFrom(['#tree1','#tree2', '#tree3','#tree4','#tree5','#tree6','#tree7','#tree8','#tree9','#tree10'], 2, {opacity: 0, y: 90, ease: Power3.easeIn}, .2);
-    </script>
-    <script>
-        TweenMax.staggerFrom(['#M2'], 2.5, { ease: Power1.easeInOut, opacity: 1, x: 700, delay: 1.5 }, .5);
-    </script>
-
-
-<div class="container">
-  <h1 id="HeadText">Forage Missoula: Know the Area Through Our Diverse Natural Foods</h1>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="jumbotron" id="jumbo"> 
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <div class="sizer1">
-            <img id="huck" src="http://www.goodlifer.com/wp-content/uploads/2010/01/wildhuckleberry.jpg" alt="Huckleberries">
-            <img id="morel" src="https://wildfoodism.files.wordpress.com/2015/04/morelmushroomwildfoodism.jpg" alt="Morel Mushrooms">
-            <img id="rosemary" src="https://s-media-cache-ak0.pinimg.com/736x/c3/4b/c7/c34bc7714100a0273eec0bdcfc8da351.jpg" alt="Rosemary">
-          </div>
-        </div>
-        <div class="item">
-        <div class="sizer2">
-          <img id="chantrelle" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Chanterelle_Cantharellus_cibarius.jpg" alt="Chantrelles">
-          <img id="chive" src="http://ian.umces.edu/imagelibrary/albums/userpics/10046/normal_iil-lholbrook-0003.JPG" alt="Chives">
-          <img id="cactus" src="https://upload.wikimedia.org/wikipedia/en/f/f9/Prickly_pear_cactus_beed.jpg" alt="Prickly Pear">
-        </div>
-        </div>
-        <div class="item">
-        <div class="sizer3">
-          <img id="onion"src="http://www.carolinacreations.biz/newsletter/wp-content/uploads/2011/11/wildonion.jpg" alt="Onions">
-          <img id="apple" src="https://cookiecrumbstoliveby.files.wordpress.com/2013/09/dscn1922.jpg" alt="Apples">
-          <img id="straw" src="https://natureexplorers.files.wordpress.com/2011/05/istock_wild-strawberries.jpg" alt="strawberry">
-        </div>
-        </div>
-      </div>  
-    </div>      
-  <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" id="left">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" id="right">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>    
-</div>
-
-<div class="container">
-  <div class="row row centered" id="mapRow">
-    
-    <div class="col-xs-3 col-centered" id="ForageText">
-      <ul><h3>Please follow these simple guidelines and everyone will stay happy and healthy:</h3>
-        <li><h4>Don't use private land without express permission from the owner</h4></li>
-        <li><h4>Don't post a location on private land without such permission</h4></li>
-        <li><h4>Disclaimer: We accept no responsibility for the accuracy of plant identification on any user posts</h4></li>
-      </ul>
-    </div>
-    
-    <div class="col-xs-6 col-centered" id="map"></div>
-    
-    <div class="col-xs-3 col-centered" id='catFilter'>
-      <h4>Filter By Category</h4>
-      <select class="form-control" id="categoryControl">
-        <option>All</option>
-        <option>Berries</option>
-        <option>Fruits</option>
-        <option>Fungi</option>
-        <option>Herbs</option>
-        <option>Root Vegetables</option>
-      <% if(user.local) { %>
-        <option>My Posts</option>
-              <% } %>
-      </select>
-      <div class="spacer50"></div>
-      <div class="form-group row">
-        <input type="text" class="form-control" placeholder="Search" id="searchText">
-      </div>
-      <input type="submit" class="btn btn-default" id="searchButton"></input>
-      
-
-      <% if(!user.local) { %>
-      <div class="container" id="signuptextcontainer">
-        <h3 id="signuptext">Sign up now to be able to post new Forage spots!</h3>
-        <a id="signuptextbutton" class="btn btn-large btn-block btn-default" href="/signup" role="button">Register Now</a>
-      </div>
-      <% } %>
-      
-      <% if(user.local) { %>
-      <div class="container" id="indexpost">
-        <h3 id="indexPostTitle">Post a new forage location!</h3>
-        <a id="indexPostButton" class="btn btn-large btn-block btn-default" href="/submitForage" role="button">New Post</a>
-      </div>
-      <% } %>
-
-       
-      <div class="container" id="mapLegend">
-        <h3 id="mapLegendtitle">Map Legend</h3>
-        <img id="mapLegendImg1" src='./images/mapmarker.png'/><p id="mapLegendtitle">Exact Location</p>
-        <img id="mapLegendImg2" src='./images/reddotimage.png'/><p id="mapLegendtitle">Vague Location</p>
-      </div>
-
-
-
-
-    </div>  
-  
+  <div id="treeContainer">
+      <div id="tree1"></div>
+      <div id="tree2"></div>
+      <div id="tree3"></div>
+      <div id="tree4"></div> 
+      <div id="tree5"></div>
+      <div id="tree6"></div>
+      <div id="tree7"></div>
+      <div id="tree8"></div>
+      <div id="tree9"></div>
+      <div id="M2"></div>
   </div>
-</div>
-</div>
+  <div id="line"></div>
 
+  <script>
+      TweenMax.staggerFrom(['#tree1','#tree2', '#tree3','#tree4','#tree5','#tree6','#tree7','#tree8','#tree9','#tree10'], 2, {opacity: 0, y: 90, ease: Power3.easeIn}, .2);
+  </script>
+  <script>
+      TweenMax.staggerFrom(['#M2'], 2.5, { ease: Power1.easeInOut, opacity: 1, x: 700, delay: 1.5 }, .5);
+  </script>     
+
+  <div class="container">
+    <div class="row row centered" id="mapRow">
+      <div class="col-xs-6 col-centered" id="map"></div>
+        <div class="col-xs-3 col-centered" id='catFilter'>
+          <h4>Filter By Category</h4>
+          <select class="form-control" id="categoryControl">
+            <option>All</option>
+            <option>Berries</option>
+            <option>Apples</option>
+            <option>Apricots</option>
+            <option>Pears</option>
+              <% if(user.local) { %>
+                <option>My Posts</option>
+              <% } %>
+          </select>
+        <div class="spacer50"></div>
+        <div class="form-group row">
+          <input type="text" class="form-control" placeholder="Search" id="searchText">
+        </div>
+          <input type="submit" class="btn btn-default" id="searchButton"></input>
+
+          <% if(!user.local) { %>
+            <div class="container" id="signuptextcontainer">
+              <h3 id="signuptext">Sign up now to be able to post new Forage spots!</h3>
+              <a id="signuptextbutton" class="btn btn-large btn-block btn-default" href="/signup" role="button">Register Now</a>
+            </div>
+          <% } %>
+      
+          <% if(user.local) { %>
+            <div class="container" id="indexpost">
+              <h3 id="indexPostTitle">Post a new forage location!</h3>
+              <a id="indexPostButton" class="btn btn-large btn-block btn-default" href="/submitForage" role="button">New Post</a>
+            </div>
+          <% } %>
+        </div>  
+      </div>
+    </div>
+  </div>
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
@@ -190,5 +88,4 @@
     </script>
     <script src="mapstyles.js"></script>
     <script src="map.js"> </script>
-
 </html>
